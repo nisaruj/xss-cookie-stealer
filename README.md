@@ -1,5 +1,5 @@
 # xss-cookie-stealer
-Collects user's cookie by using XSS vulnerability.
+Collects user's cookie with XSS vulnerability.
 
 ## Demo
 [Click Here](https://inwza007.herokuapp.com/)

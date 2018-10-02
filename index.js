@@ -18,7 +18,7 @@ app.get('/cookies', (req, res) => {
 //Stole cookie 
 app.get('/stealcookie', (req, res) => {
     res.setHeader('X-XSS-Protection', '0')
-    cookies += req.query.c.replace("<", "") + "<br><br>----------------------------------------------<br><br>";
+    cookies += req.query.c.replace("<", "&lt;").replace(">", "&gt;") + "<br><br>----------------------------------------------<br><br>";
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
